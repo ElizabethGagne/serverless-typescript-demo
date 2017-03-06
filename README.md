@@ -47,4 +47,8 @@ root@ea886cea5989:/src/serverless-typescript-demo# sls deploy
 ```
 Then with your browser enter the Endpoint URL the serverless give you, something like: https://oddletters.execute-api.us-west-2.amazonaws.com/dev/hello
 
-
+- To run mocha tests:
+npm run test (karma doesn't start the mocha tests, cannot figure out why)
+```
+root@ea886cea5989:/src/serverless-typescript-demo# mocha --compilers ts:ts-node/register,tsx:ts-node/register *.ts
+```

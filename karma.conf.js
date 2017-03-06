@@ -3,7 +3,7 @@ var webpackConfig = require('./webpack.config');
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha'],
     files: ['tests.ts'],
     preprocessors: {
       'tests.ts': ['webpack']
