@@ -26,11 +26,15 @@ phases:
                 karma-mocha \
                 phantomjs \
                 phantomjs-prebuilt \
-                karma-phantomjs-launcher
+                karma-phantomjs-launcher \
+                request
       - rm node_modules
       - ln -s /usr/local/lib/node_modules node_modules
       - typings i --save dt~mocha --global
       - typings i --save chai
+  pre_build:
+    commands:
+      - npm run test:local
   build:
     commands:
       - npm run deploy:cicd

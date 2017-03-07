@@ -5,9 +5,9 @@
   "main": "handler.ts",
   "scripts": {
     "lint": "tslint *.ts",
-    "test": "mocha --compilers ts:ts-node/register,tsx:ts-node/register tests.ts",
-    "test:remote": "npm run test",
-    "deploy:cicd": "pwd; ls -l; serverless deploy --stage cicd"
+    "test:local": "mocha --compilers ts:ts-node/register,tsx:ts-node/register tests.ts",
+    "test:remote": ". ./helpers/endpoint.sh; mocha remote/tests.js",
+    "deploy:cicd": "mkdir .build; serverless deploy --stage cicd | tee .build/deploy.out"
   },
   "repository": {
     "type": "git",

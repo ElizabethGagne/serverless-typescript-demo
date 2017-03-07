@@ -34,3 +34,4 @@ build/Release
 
 .webpack
 .serverless
+.build
