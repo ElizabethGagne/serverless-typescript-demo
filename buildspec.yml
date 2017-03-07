@@ -1,0 +1,13 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install
+      - npm install serverless
+      - npm install typings
+  build:
+    commands:
+      - npm run deploy:cicd
+  post_build:
+    commands:
+      - npm run test:remote
