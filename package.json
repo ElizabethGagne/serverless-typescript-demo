@@ -7,18 +7,18 @@
     "lint": "tslint *.ts",
     "test": "mocha --compilers ts:ts-node/register,tsx:ts-node/register tests.ts",
     "test:remote": "npm run test",
-    "deploy:cicd": "pwd; ls -l /usr/local/lib/node_modules; serverless deploy --stage cicd"
+    "deploy:cicd": "pwd; ls -l .; ls -l /usr/local/lib/node_modules; serverless deploy --stage cicd"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gshackles/serverless-typescript-demo.git"
+    "url": "git+https://github.com/ElizabethGagne/serverless-typescript-demo.git"
   },
-  "author": "Greg Shackles",
+  "author": "Elizabeth Gagne",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gshackles/serverless-typescript-demo/issues"
+    "url": "https://github.com/ElizabethGagne/serverless-typescript-demo/issues"
   },
-  "homepage": "https://github.com/gshackles/serverless-typescript-demo#readme",
+  "homepage": "https://github.com/ElizabethGagne/serverless-typescript-demo#readme",
   "dependencies": {
     "chai": "^3.5.0",
     "karma": "^1.3.0",

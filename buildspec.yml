@@ -27,6 +27,8 @@ phases:
                 phantomjs \
                 phantomjs-prebuilt \
                 karma-phantomjs-launcher
+      - rm node_module
+      - ln -s /usr/local/lib/node_modules node_modules
       - typings i --save dt~mocha --global
       - typings i --save chai
   build:
