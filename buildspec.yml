@@ -27,6 +27,8 @@ phases:
                 phantomjs \
                 phantomjs-prebuilt \
                 karma-phantomjs-launcher
+      - typings i --save dt~mocha --global
+      - typings i --save chai
   build:
     commands:
       - npm run deploy:cicd
