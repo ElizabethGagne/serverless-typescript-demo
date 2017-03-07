@@ -2,9 +2,31 @@ version: 0.1
 phases:
   install:
     commands:
-      - npm install
-      - npm install serverless
-      - npm install typings
+      - npm install --silent --save-dev -g \
+                babel \
+                babel-cli \
+                gulp-babel \
+                gulp-cli \
+                bower \
+                typescript \
+                typings \
+                webpack \
+                serverless \
+                ts-loader \
+                ts-node \
+                serverless-webpack \
+                tslint \
+                tslint-config-olo \
+                mocha \
+                chai \
+                karma \
+                karma-typescript-preprocessor2 \
+                karma-webpack \
+                karma-chai \
+                karma-mocha \
+                phantomjs \
+                phantomjs-prebuilt \
+                karma-phantomjs-launcher
   build:
     commands:
       - npm run deploy:cicd
