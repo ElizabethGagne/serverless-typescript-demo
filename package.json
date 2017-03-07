@@ -7,7 +7,7 @@
     "lint": "tslint *.ts",
     "test": "mocha --compilers ts:ts-node/register,tsx:ts-node/register tests.ts",
     "test:remote": "npm run test",
-    "deploy:cicd": "mkdir -p .build; . serverless deploy --stage cicd | tee .build/deploy.out"
+    "deploy:cicd": "pwd; ls -l /usr/local/lib/node_modules; serverless deploy --stage cicd"
   },
   "repository": {
     "type": "git",
