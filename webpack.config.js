@@ -5,7 +5,8 @@ module.exports = {
   target: 'node',
   module: {
     loaders: [
-      { test: /\.ts(x?)$/, loader: 'ts-loader' }
+      { test: /\.ts(x?)$/, loader: 'ts-loader' },
+      { test: /\.json$/, loader: 'json-loader' }
     ]
   },
   resolve: {

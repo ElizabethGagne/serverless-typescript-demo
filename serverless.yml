@@ -5,6 +5,11 @@ provider:
   runtime: nodejs4.3
   profile: TEKsystems
   region: us-west-2
+  iamRoleStatements:
+      - Effect: "Allow"
+        Resource: "*"
+        Action:
+          - "kinesis:*"
 
 plugins:
   - serverless-webpack
@@ -12,8 +17,15 @@ plugins:
 functions:
   hello:
     handler: handler.hello
-
     events:
      - http:
          path: hello
          method: get
+
+  dataReceiver:
+    handler: handler.dataReceiver
+
+  logger:
+    handler: handler.logger
+    events:
+      - stream: arn:aws:kinesis:us-west-2:${env:ACCOUNT_ID}:stream/data-receiver

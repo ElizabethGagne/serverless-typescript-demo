@@ -13,6 +13,7 @@ phases:
                 webpack \
                 serverless \
                 ts-loader \
+                json-loader \
                 ts-node \
                 serverless-webpack \
                 tslint \
@@ -27,7 +28,13 @@ phases:
                 phantomjs \
                 phantomjs-prebuilt \
                 karma-phantomjs-launcher \
-                request
+                request \
+                aws-sdk \
+                aws-lambda \
+                uuid \
+                @types/aws-lambda \
+                @types/aws-sdk \
+                @types/es6-promise \
       - rm node_modules
       - ln -s /usr/local/lib/node_modules node_modules
       - typings i --save dt~mocha --global
