@@ -15,6 +15,9 @@ aws_secret_access_key = YYYY
 ## Set your AWS account ID into environment variable
 export ACCOUNT_ID=123456
 
+## Create a Kinesis Stream per environment into your AWS Accound
+i.e dev-data-receiver
+
 ## Bake the serverless-docker image
 Follow the README to bake the image 
 
