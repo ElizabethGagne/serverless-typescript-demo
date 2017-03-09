@@ -32,13 +32,13 @@ phases:
                 aws-sdk \
                 aws-lambda \
                 uuid
+      - npm install --save -g @types/aws-sdk
+      - npm install --save -g @types/aws-lambda
+      - npm install --save -g @types/core-js
       - rm node_modules
       - ln -s /usr/local/lib/node_modules node_modules
       - typings i --save dt~mocha --global
       - typings i --save chai
-      - typings i --save aws-lambda --global
-      - typings i --save aws-sdk --global
-      - typings i --save core-js --global
   pre_build:
     commands:
       - npm run test:local
