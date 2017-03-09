@@ -25,7 +25,7 @@ export function dataReceiver(event: any, context: Context, callback: Callback) {
   const params = {
     Data: data,
     PartitionKey: partitionKey,
-    StreamName: 'data-receiver'
+    StreamName: process.env.KINESIS_STREAM
   };
 
   timestamp = Date.now();

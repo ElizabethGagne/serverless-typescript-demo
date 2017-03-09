@@ -10,6 +10,8 @@ provider:
         Resource: "*"
         Action:
           - "kinesis:*"
+  environment:
+      KINESIS_STREAM: ${opt:stage, self:provider.stage}-data-receiver
 
 plugins:
   - serverless-webpack
@@ -28,4 +30,4 @@ functions:
   logger:
     handler: handler.logger
     events:
-      - stream: arn:aws:kinesis:us-west-2:${env:ACCOUNT_ID}:stream/data-receiver
+      - stream: arn:aws:kinesis:us-west-2:${env:ACCOUNT_ID}:stream/${self:provider.environment.KINESIS_STREAM}
