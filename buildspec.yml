@@ -31,14 +31,14 @@ phases:
                 request \
                 aws-sdk \
                 aws-lambda \
-                uuid \
-                @types/aws-lambda \
-                @types/aws-sdk \
-                @types/es6-promise \
+                uuid
       - rm node_modules
       - ln -s /usr/local/lib/node_modules node_modules
       - typings i --save dt~mocha --global
       - typings i --save chai
+      - typings i --save aws-lambda --global
+      - typings i --save aws-sdk --global
+      - typings i --save es6-promise --global
   pre_build:
     commands:
       - npm run test:local
