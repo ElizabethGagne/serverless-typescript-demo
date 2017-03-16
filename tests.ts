@@ -1,6 +1,8 @@
 import { hello } from './handler';
 import * as chai from 'chai';
 const expect = chai.expect;
+import * as assert from 'power-assert';
+import * as sinon from 'sinon';
 
 describe('hello function', () => {
   it('processes the query string', done => {
@@ -19,5 +21,25 @@ describe('hello function', () => {
       expect(result.body).to.equal('Go Serverless v1.0!');
       done();
     });
+  });
+
+  it('processes the query string, test with sinon', done => {
+    const requestEvent = {
+      method: 'GET',
+      query: {
+        foo: 'bar'
+      }
+    };
+
+    const callback = sinon.spy();
+    hello(requestEvent, {}, callback);
+
+    assert.ok(callback.calledOnce);
+    assert.equal(callback.getCall(0).args[0], null);
+    assert.equal(callback.getCall(0).args[1].statusCode, 200);
+    assert.equal(callback.getCall(0).args[1].body, 'Go Serverless v1.0!');
+
+    callback.reset();
+    done()
   });
 });
