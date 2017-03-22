@@ -30,4 +30,19 @@ functions:
   logger:
     handler: handler.logger
     events:
-      - stream: arn:aws:kinesis:us-west-2:${env:ACCOUNT_ID}:stream/${self:provider.environment.KINESIS_STREAM}
+      - stream:
+        type: kinesis
+        arn:
+          Fn::GetAtt:
+            - ResourcesKinesisStream
+            - Arn
+        batchSize: 1
+
+resources:
+  Resources:
+    ResourcesKinesisStream:
+      Type: AWS::Kinesis::Stream
+      Properties:
+        Name: ${self:provider.environment.KINESIS_STREAM}
+        ShardCount: 1
+
